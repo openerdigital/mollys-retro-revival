@@ -9,7 +9,7 @@
       {% if section.settings.image != blank %}
         {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'eager', alt: section.settings.image.alt | escape }}
       {% else %}
-        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="">
+        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900">
       {% endif %}
     </div>
     <div class="hero-panel hero-animate__item hero-animate__item--panel">

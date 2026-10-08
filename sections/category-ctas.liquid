@@ -9,7 +9,7 @@
           {% if block.settings.image != blank %}
             {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.title | escape }}
           {% else %}
-            <img src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" loading="lazy">
+            <img src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900" loading="lazy">
           {% endif %}
           <span class="category-card__overlay" aria-hidden="true"></span>
           <h3>{{ block.settings.title }}</h3>

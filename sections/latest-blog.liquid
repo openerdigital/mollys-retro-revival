@@ -5,7 +5,7 @@
         {% if section.settings.image != blank %}
           {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.title | escape }}
         {% else %}
-          <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" loading="lazy">
+          <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900" loading="lazy">
         {% endif %}
       </div>
       <div class="blog-feature__content">

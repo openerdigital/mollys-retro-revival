@@ -3,7 +3,7 @@
     {% if product.featured_image %}
       {{ product.featured_image | image_url: width: 1200 | image_tag: alt: product.featured_image.alt | escape }}
     {% else %}
-      <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="">
+      <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900">
     {% endif %}
   </div>
   <div class="product-info">

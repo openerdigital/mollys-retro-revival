@@ -16,7 +16,7 @@
       {% if article.image %}
         {{ article.image | image_url: width: 1300 | image_tag: loading: 'eager', alt: article.image.alt | escape }}
       {% else %}
-        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="">
+        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900">
       {% endif %}
     </div>
 
@@ -63,7 +63,7 @@
     <div class="article-page__cta">
       <h2>Find your anchor piece</h2>
       <div>
-        <a class="button" href="/collections/shop-all-vintage">Shop all finds</a>
+        <a class="button" href="{{ routes.collections_url }}/shop-all-vintage">Shop all finds</a>
         <a class="button button--secondary" href="{{ blog.url | default: '/blogs/news' }}">Back to journal</a>
       </div>
     </div>
