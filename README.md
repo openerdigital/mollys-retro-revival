@@ -30,19 +30,21 @@ shopify theme dev --store pzz1vh-21.myshopify.com
 
 The `main` branch is the production source branch. Develop changes on feature branches, preview them locally, and merge reviewed work into `main`.
 
-## Staging
+## Password-protected review site
 
-The merchant store has an unpublished theme named **Molly's Retro Revival - Staging**, ID `167542653125`.
+The merchant store's active theme is named **Molly's Retro Revival - Staging**, ID `167542653125`. It was published for client review on 8 October 2026, with storefront password protection retained.
 
-- [Staging preview](https://pzz1vh-21.myshopify.com/?preview_theme_id=167542653125)
+- [Permanent review URL](https://pzz1vh-21.myshopify.com/)
 - [Theme editor](https://pzz1vh-21.myshopify.com/admin/themes/167542653125/editor)
 
-The storefront is password protected. Visitors need the store's storefront password to view the preview.
+The storefront is password protected. Visitors need the store's storefront password to view it. This storefront URL does not have the two-day expiry of Shopify's visitor preview links.
 
-To upload changes to the existing staging theme:
+To upload future changes for review without immediately updating the active theme, create a new unpublished theme:
 
 ```bash
-shopify theme push --store pzz1vh-21.myshopify.com --theme 167542653125 --strict
+shopify theme push --store pzz1vh-21.myshopify.com --unpublished --theme "Molly's Retro Revival - Review" --strict
 ```
 
-GitHub stores the source code. Deployments currently use Shopify CLI; pushing to GitHub alone does not update the staging theme. Shopify hosts the storefront and checkout, so this Liquid theme does not require a Vercel deployment.
+Review the new theme before publishing it. Reuse its returned theme ID for subsequent uploads instead of creating a new theme each time.
+
+GitHub stores the source code. Deployments currently use Shopify CLI; pushing to GitHub alone does not update Shopify. Shopify hosts the storefront and checkout, so this Liquid theme does not require a Vercel deployment.
