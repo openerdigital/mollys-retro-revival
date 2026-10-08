@@ -179,11 +179,11 @@ button.shopify-payment-button__button:hover {
 }
 .hero-tagline-banner p {
   margin: 0;
-  font-family: inherit;
-  font-size: clamp(.75rem, 1.4vw, .88rem);
-  font-weight: 500;
-  line-height: 1.4;
-  text-transform: none;
+  font-family: var(--font-retro);
+  font-size: clamp(.72rem, 1.2vw, .82rem);
+  font-weight: 600;
+  line-height: 1.6;
+  text-transform: uppercase;
   letter-spacing: .04em;
   white-space: nowrap;
 }
