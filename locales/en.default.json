@@ -7,6 +7,19 @@
       "variant": "Choose an option"
     }
   },
+  "about": {
+    "page": {
+      "portrait_alt": "Molly, founder of Molly's Retro Revival",
+      "portrait_caption": "Molly, founder of Molly's Retro Revival",
+      "approach": "Our approach",
+      "preloved_heading": "Pre-loved, one-off pieces",
+      "preloved_text": "A changing collection of vintage and secondhand finds. Many pieces are one-offs, ready to be enjoyed in a new home.",
+      "selection_heading": "Selected with care",
+      "selection_text": "We choose furniture, glassware and homewares for their design, materials and character, with an eye for how they fit into everyday life.",
+      "condition_heading": "Honest condition details",
+      "condition_text": "Vintage pieces can show signs of age and use. Read each product listing for the condition details that make your find its own."
+    }
+  },
   "cart": {
     "general": {
       "eyebrow": "Your vintage finds",

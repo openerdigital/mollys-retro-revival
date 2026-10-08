@@ -6,7 +6,7 @@
   <a href="{{ product.url }}">
     <div class="product-card__media">
       {% if product.featured_image %}
-        {{ product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: product.featured_image.alt | escape }}
+        {{ product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: product.featured_image.alt }}
       {% else %}
         <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900" loading="lazy">
       {% endif %}

@@ -3,7 +3,7 @@
     <div class="about-feature">
       <div class="about-feature__media">
         {% if section.settings.image != blank %}
-          {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.heading | escape }}
+          {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.image.alt }}
         {% else %}
           <img src="{{ 'molly-portrait.jpg' | asset_url }}" alt="Molly, founder of Molly's Retro Revival" width="1440" height="1920" loading="lazy">
         {% endif %}
@@ -25,9 +25,9 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Photo" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About us" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Thoughtfully collected retro treasures" },
-    { "type": "textarea", "id": "text", "label": "Text", "default": "Molly's Retro Revival is built around warm, character-filled pieces with a second life ahead of them. We source vintage, pre-loved and decorative finds for homes that feel personal, playful and a little nostalgic." },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Read about us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Vintage pieces, selected by Molly" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Discover vintage furniture, glassware and homewares selected by Molly. Pre-loved pieces with distinctive shapes, warm colours and character worth keeping." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Our story" },
     { "type": "url", "id": "link", "label": "Link" }
   ],
   "presets": [{ "name": "About feature" }]

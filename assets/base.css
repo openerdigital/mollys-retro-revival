@@ -9,7 +9,7 @@
   --ink: #30180d;
   --paper: #fff8de;
   --line: rgba(48, 24, 13, .18);
-  --shadow: 0 16px 40px rgba(48, 24, 13, .14);
+  --shadow: 0 8px 24px rgba(48, 24, 13, .06);
   --radius: 10px;
 }
 
@@ -20,8 +20,9 @@ body {
   background: var(--paper);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.65;
 }
+h1, h2, h3 { font-weight: 400; letter-spacing: -.025em; text-wrap: balance; }
 a { color: inherit; text-decoration: none; }
 img, svg { display: block; max-width: 100%; }
 button, input, select, textarea { font: inherit; }
@@ -53,14 +54,14 @@ button, input, select, textarea { font: inherit; }
   justify-content: center;
   min-height: 46px;
   padding: 12px 20px;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--ink);
   border-radius: 999px;
   background: var(--marigold);
   color: var(--ink);
-  font-weight: 800;
-  text-transform: uppercase;
+  font-weight: 600;
+  text-transform: none;
   letter-spacing: 0;
-  box-shadow: 4px 4px 0 var(--rust);
+  box-shadow: 2px 2px 0 rgba(159, 37, 5, .55);
   cursor: pointer;
   transition: background-color .16s ease, border-color .16s ease, color .16s ease, transform .16s ease;
 }
@@ -74,10 +75,10 @@ button.shopify-payment-button__button:hover {
 .announcement {
   background: var(--rust);
   color: var(--cream);
-  font-weight: 800;
+  font-weight: 500;
   text-align: center;
   padding: 9px 16px;
-  text-transform: uppercase;
+  text-transform: none;
   font-size: .82rem;
 }
 .site-header {
@@ -85,7 +86,7 @@ button.shopify-payment-button__button:hover {
   top: 0;
   z-index: 20;
   background: var(--olive);
-  border-bottom: 3px solid var(--rust);
+  border-bottom: 1px solid rgba(48, 24, 13, .22);
   backdrop-filter: blur(10px);
 }
 .header-inner {
@@ -94,7 +95,7 @@ button.shopify-payment-button__button:hover {
   gap: clamp(14px, 3vw, 42px);
   align-items: center;
   min-height: 0;
-  padding-block: 24px;
+  padding-block: 20px;
 }
 .brand {
   display: block;
@@ -165,7 +166,7 @@ button.shopify-payment-button__button:hover {
 }
 .hero-tagline-banner {
   margin-bottom: clamp(44px, 7vw, 80px);
-  padding: 7px 0;
+  padding: 12px 0;
   background: var(--cream);
   color: var(--rust);
   border-top: 1px solid rgba(48, 24, 13, .16);
@@ -175,11 +176,12 @@ button.shopify-payment-button__button:hover {
 }
 .hero-tagline-banner p {
   margin: 0;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: clamp(.76rem, 1.7vw, .96rem);
-  font-weight: 900;
-  line-height: 1.15;
-  text-transform: uppercase;
+  font-family: inherit;
+  font-size: clamp(.75rem, 1.4vw, .88rem);
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: .04em;
   white-space: nowrap;
 }
 .hero-grid {
@@ -191,8 +193,8 @@ button.shopify-payment-button__button:hover {
 .hero-media {
   overflow: hidden;
   min-height: 420px;
-  border: 2px solid rgba(255, 244, 207, .7);
-  border-radius: 18px;
+  border: 1px solid rgba(255, 244, 207, .5);
+  border-radius: 12px;
   background: var(--burnt);
   box-shadow: var(--shadow);
 }
@@ -205,10 +207,10 @@ button.shopify-payment-button__button:hover {
 .hero-panel {
   background: var(--cream);
   color: var(--ink);
-  border: 2px solid rgba(48, 24, 13, .2);
-  border-radius: 18px;
+  border: 1px solid rgba(48, 24, 13, .16);
+  border-radius: 12px;
   padding: clamp(28px, 5vw, 56px);
-  text-align: center;
+  text-align: left;
   transform: translateY(var(--hero-panel-parallax-y, 0));
   will-change: transform;
 }
@@ -237,14 +239,16 @@ button.shopify-payment-button__button:hover {
   margin: 0;
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.32rem, 3.36vw, 2.48rem);
-  line-height: 1.19;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 var(--marigold);
+  max-width: 18ch;
+  font-size: clamp(2.1rem, 3.7vw, 3.15rem);
+  font-weight: 400;
+  line-height: 1.12;
+  text-transform: none;
+  text-shadow: none;
 }
-.hero p { max-width: 620px; margin: 22px auto; font-size: clamp(1.05rem, 3vw, 1.28rem); font-weight: 700; }
+.hero-panel p { max-width: 44ch; margin: 24px 0 28px; font-size: clamp(1rem, 1.6vw, 1.1rem); font-weight: 400; line-height: 1.7; }
 .section {
-  padding: 48px 0;
+  padding: clamp(48px, 6vw, 80px) 0;
 }
 .section-heading {
   display: flex;
@@ -258,8 +262,9 @@ button.shopify-payment-button__button:hover {
   font-family: Georgia, "Times New Roman", serif;
   color: var(--olive-deep);
   font-size: clamp(1.36rem, 4vw, 2.52rem);
-  line-height: 1.1;
-  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
 }
 .category-grid, .product-grid {
   display: grid;
@@ -268,7 +273,7 @@ button.shopify-payment-button__button:hover {
 }
 .category-card, .product-card {
   overflow: hidden;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   background: #fffdf0;
   box-shadow: var(--shadow);
@@ -298,7 +303,7 @@ button.shopify-payment-button__button:hover {
   z-index: -1;
   background: linear-gradient(180deg, rgba(48, 24, 13, .04) 0%, rgba(48, 24, 13, .58) 58%, rgba(48, 24, 13, .88) 100%);
 }
-.category-card h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(.92rem, 3.67vw, 1.6rem); line-height: 1.1; text-transform: uppercase; }
+.category-card h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.1rem, 2.6vw, 1.7rem); font-weight: 400; line-height: 1.2; text-transform: none; }
 .product-card__media {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -310,15 +315,15 @@ button.shopify-payment-button__button:hover {
   top: 12px;
   right: 12px;
   padding: 8px 12px;
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--cream);
   color: var(--ink);
   font-size: .76rem;
-  font-weight: 900;
+  font-weight: 600;
   line-height: 1;
-  text-transform: uppercase;
-  box-shadow: 3px 3px 0 var(--rust);
+  text-transform: none;
+  box-shadow: none;
 }
 .product-card__media img {
   width: 100%;
@@ -329,9 +334,9 @@ button.shopify-payment-button__button:hover {
 }
 .product-card:hover .product-card__media img { transform: scale(1.04); }
 .image-placeholder { background: #f1e8bd; }
-.product-card__info { padding: 14px; }
-.product-card__title { margin: 0 0 6px; font-weight: 900; }
-.price { color: var(--rust); font-weight: 900; }
+.product-card__info { padding: 18px; }
+.product-card__title { margin: 0 0 8px; font-weight: 500; font-size: .98rem; line-height: 1.45; letter-spacing: 0; }
+.price { color: var(--rust); font-weight: 600; }
 .blog-feature {
   display: grid;
   gap: 0;
@@ -360,8 +365,8 @@ button.shopify-payment-button__button:hover {
 .blog-feature__eyebrow {
   margin: 0 0 10px;
   color: var(--rust);
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 600;
+  text-transform: none;
   font-size: .82rem;
 }
 .blog-feature h2 {
@@ -370,7 +375,7 @@ button.shopify-payment-button__button:hover {
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.36rem, 4vw, 2.52rem);
   line-height: 1.1;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .blog-feature__actions {
   display: flex;
@@ -379,8 +384,8 @@ button.shopify-payment-button__button:hover {
   margin-top: 20px;
 }
 .about-feature-section {
-  background: var(--secondary-bg);
-  color: var(--cream);
+  background: var(--cream);
+  color: var(--ink);
 }
 .about-feature {
   display: grid;
@@ -390,19 +395,19 @@ button.shopify-payment-button__button:hover {
 .about-feature__media {
   position: relative;
   overflow: hidden;
-  width: min(420px, 82vw);
-  aspect-ratio: 1;
+  width: min(360px, 82vw);
+  aspect-ratio: 4 / 5;
   justify-self: center;
-  border: 4px solid var(--marigold);
-  border-radius: 50%;
+  border: 1px solid var(--line);
+  border-radius: 160px 160px 10px 10px;
   background: var(--burnt);
-  box-shadow: 18px 18px 0 var(--rust);
+  box-shadow: none;
 }
 .about-feature__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 44%;
 }
 .about-feature__content {
   max-width: 640px;
@@ -411,40 +416,37 @@ button.shopify-payment-button__button:hover {
 }
 .about-feature__eyebrow {
   margin: 0 0 10px;
-  color: var(--marigold);
-  font-weight: 900;
-  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: .04em;
   font-size: .82rem;
 }
 .about-feature h2 {
   margin: 0;
-  color: var(--cream);
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.36rem, 4vw, 2.52rem);
-  line-height: 1.1;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 0 var(--rust);
+  max-width: 20ch;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.18;
+  text-transform: none;
+  text-shadow: none;
 }
 .about-feature__rule {
   display: block;
-  width: 92px;
-  height: 6px;
-  margin: 20px 0;
-  border-radius: 999px;
-  background: var(--marigold);
+  width: 48px;
+  height: 1px;
+  margin: 24px 0;
+  background: var(--line);
 }
 .about-feature__content p:not(.about-feature__eyebrow) {
   margin: 18px 0 22px;
-  font-weight: 700;
-  color: rgba(255, 244, 207, .9);
-  font-size: clamp(1.02rem, 2.4vw, 1.2rem);
-}
-.about-feature .button {
-  background: var(--cream);
-  box-shadow: 4px 4px 0 var(--marigold);
-}
-.about-feature .button:hover {
-  background: #f0dfaa;
+  max-width: 48ch;
+  font-weight: 400;
+  color: rgba(48, 24, 13, .78);
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 .page-hero,
 .article-header {
@@ -454,8 +456,9 @@ button.shopify-payment-button__button:hover {
 .page-hero__eyebrow {
   margin: 0 0 10px;
   color: var(--rust);
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: .05em;
   font-size: .82rem;
 }
 .page-hero h1,
@@ -465,13 +468,14 @@ button.shopify-payment-button__button:hover {
   color: var(--olive-deep);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.8rem, 5vw, 3.25rem);
-  line-height: 1.1;
-  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.15;
+  text-transform: none;
 }
 .page-hero p,
 .article-header p,
 .about-page__hero p {
-  font-weight: 700;
+  font-weight: 400;
 }
 .article-grid {
   display: grid;
@@ -505,9 +509,9 @@ button.shopify-payment-button__button:hover {
 .article-card__content p {
   margin: 0 0 8px;
   color: var(--rust);
-  font-weight: 900;
+  font-weight: 500;
   font-size: .82rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .article-card__content h2,
 .about-page__content h2,
@@ -516,8 +520,9 @@ button.shopify-payment-button__button:hover {
   color: var(--olive-deep);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.25rem, 3vw, 2rem);
-  line-height: 1.1;
-  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
 }
 .article-page__inner {
   display: grid;
@@ -546,7 +551,7 @@ button.shopify-payment-button__button:hover {
   color: var(--rust);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
-  font-weight: 900;
+  font-weight: 400;
   line-height: 1.25;
 }
 .article-content__section {
@@ -559,8 +564,9 @@ button.shopify-payment-button__button:hover {
   color: var(--olive-deep);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
-  line-height: 1.1;
-  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: none;
 }
 .article-content__section p {
   margin: 0 0 14px;
@@ -574,7 +580,7 @@ button.shopify-payment-button__button:hover {
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.25rem, 3.4vw, 2rem);
-  font-weight: 900;
+  font-weight: 400;
   line-height: 1.2;
 }
 .article-tips {
@@ -605,81 +611,105 @@ button.shopify-payment-button__button:hover {
   flex-wrap: wrap;
   gap: 12px;
 }
+.about-page { padding-block: clamp(40px, 7vw, 88px) clamp(56px, 8vw, 96px); }
 .about-page__hero {
   display: grid;
-  gap: 24px;
+  gap: clamp(32px, 7vw, 88px);
   align-items: center;
-  padding: clamp(26px, 6vw, 58px);
-  border-radius: var(--radius);
-  background: var(--cream);
-  box-shadow: var(--shadow);
+  padding: 0 0 clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid var(--line);
 }
-.about-page__mark {
-  width: min(260px, 60vw);
-  justify-self: center;
+.about-page__intro h1 {
+  max-width: 16ch;
+  color: var(--ink);
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  line-height: 1.1;
 }
-.about-page__mark img {
-  width: 100%;
-  height: auto;
+.about-page__intro > p:last-child {
+  max-width: 42ch;
+  margin: 24px 0 0;
+  font-size: clamp(1.08rem, 1.8vw, 1.22rem);
+  line-height: 1.75;
+  color: rgba(48, 24, 13, .78);
+}
+.about-page__portrait { width: min(100%, 440px); margin: 0; justify-self: center; }
+.about-page__portrait figcaption { margin-top: 14px; font-size: .83rem; color: rgba(48, 24, 13, .68); }
+.about-page__story-heading h2 {
+  margin: 0;
+  font: 400 clamp(1.6rem, 3vw, 2.15rem)/1.25 Georgia, serif;
+  color: var(--olive-deep);
+  max-width: 18ch;
 }
 .about-page__story {
   display: grid;
   gap: 24px;
-  align-items: center;
-  margin-top: 42px;
+  align-items: start;
+  margin-top: clamp(40px, 6vw, 72px);
 }
 .about-page__media {
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  border: 2px solid var(--ink);
-  border-radius: 50% 50% var(--radius) var(--radius);
+  border: 1px solid var(--line);
+  border-radius: 10px;
   background: #f1e8bd;
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 .about-page__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 44%;
 }
 .about-page__content {
-  padding: clamp(22px, 5vw, 38px);
-  border-left: 6px solid var(--marigold);
-  background: #fffdf0;
+  max-width: 62ch;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
+.about-page__content p { margin: 0 0 20px; }
+.about-page__content p:last-child { margin-bottom: 0; }
+.about-page__content .rte > :first-child { margin-top: 0; }
+.about-page__content .rte a { text-decoration: underline; text-underline-offset: 4px; }
+.about-page__content h2, .about-page__content h3 { margin-top: 24px; }
 .about-values {
   display: grid;
-  gap: 16px;
-  margin-top: 42px;
+  gap: 28px;
+  margin-top: clamp(40px, 6vw, 72px);
 }
 .about-values article {
-  padding: 20px;
-  border: 2px solid var(--ink);
-  border-radius: var(--radius);
-  background: var(--paper);
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line);
 }
 .about-values h3 {
   margin: 0 0 8px;
-  color: var(--rust);
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: none;
 }
 .about-values p {
   margin: 0;
-  font-weight: 700;
+  color: rgba(48, 24, 13, .76);
+  font-weight: 400;
+  line-height: 1.75;
 }
 .about-page__cta {
-  margin-top: 42px;
+  margin-top: clamp(40px, 6vw, 72px);
   padding: clamp(24px, 5vw, 42px);
   border-radius: var(--radius);
-  background: var(--olive-deep);
-  color: var(--cream);
-  text-align: center;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
 }
 .about-page__cta h2 {
-  color: var(--cream);
+  color: var(--ink);
 }
+.about-page__cta p { max-width: 46ch; margin: 8px 0 0; color: rgba(48, 24, 13, .76); }
+.about-page__cta .button { flex-shrink: 0; }
 .collection-layout {
   display: grid;
   gap: 12px;
@@ -711,7 +741,7 @@ button.shopify-payment-button__button:hover {
   align-items: center;
   margin-left: auto;
   color: rgba(48, 24, 13, .72);
-  font-weight: 900;
+  font-weight: 500;
 }
 .collection-sort select,
 .filter-price input {
@@ -743,7 +773,7 @@ button.shopify-payment-button__button:hover {
   padding: 4px 0;
   cursor: pointer;
   color: rgba(48, 24, 13, .72);
-  font-weight: 900;
+  font-weight: 500;
   list-style: none;
 }
 .filter-group summary::-webkit-details-marker {
@@ -808,8 +838,8 @@ button.shopify-payment-button__button:hover {
   gap: 4px;
   flex: 1;
   font-size: .85rem;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-weight: 500;
+  text-transform: none;
 }
 .filter-price input {
   width: 100%;
@@ -827,7 +857,7 @@ button.shopify-payment-button__button:hover {
   border-radius: 999px;
   background: var(--cream);
   color: var(--rust);
-  font-weight: 900;
+  font-weight: 500;
   font-size: .78rem;
 }
 .product-page {
@@ -836,7 +866,7 @@ button.shopify-payment-button__button:hover {
   padding: 32px 0 58px;
 }
 .product-media {
-  border: 2px solid var(--ink);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
   background: #f1e8bd;
@@ -956,6 +986,11 @@ button.shopify-payment-button__button:hover {
     justify-content: flex-start;
   }
   .hero-panel { margin-top: -28px; position: relative; z-index: 1; }
+  .hero-media, .hero-media img { min-height: 300px; }
+  .hero-tagline-banner p { white-space: normal; }
+  .about-feature__media { width: min(320px, 82vw); }
+  .about-page__intro h1 { max-width: 18ch; }
+  .about-page__cta { flex-direction: column; align-items: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal,
@@ -976,7 +1011,7 @@ button.shopify-payment-button__button:hover {
 @media (min-width: 761px) {
   .hero-grid, .product-page { grid-template-columns: 1fr 1fr; }
   .hero-panel {
-    margin-left: -64px;
+    margin-left: -42px;
     position: relative;
     z-index: 1;
   }
@@ -991,8 +1026,8 @@ button.shopify-payment-button__button:hover {
     z-index: 1;
   }
   .about-feature { grid-template-columns: minmax(280px, .8fr) minmax(0, 1fr); }
-  .about-page__hero { grid-template-columns: minmax(0, 1fr) auto; }
-  .about-page__story { grid-template-columns: minmax(0, .82fr) minmax(0, 1fr); }
+  .about-page__hero { grid-template-columns: minmax(0, 1fr) minmax(0, .86fr); }
+  .about-page__story { grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: clamp(40px, 6vw, 80px); }
   .about-values { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .footer-inner { grid-template-columns: 1fr auto; align-items: center; }
 }
