@@ -17,8 +17,9 @@
       <a class="header-icon" href="{{ routes.search_url }}" aria-label="Search">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="header-icon" href="{{ routes.cart_url }}" aria-label="Cart">
+      <a class="header-icon header-cart" href="{{ routes.cart_url }}" aria-label="{{ 'cart.general.label' | t: count: cart.item_count | escape }}">
         <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h14l-2 10H8L6 7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 7 5 3H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+        {% if cart.item_count > 0 %}<span class="header-cart__count" aria-hidden="true">{{ cart.item_count }}</span>{% endif %}
       </a>
     </div>
     <details class="mobile-menu">
@@ -39,6 +40,11 @@
     </details>
   </div>
 </header>
+
+{% stylesheet %}
+  .header-cart { position: relative; }
+  .header-cart__count { position: absolute; top: -6px; right: -6px; display: grid; place-items: center; min-width: 22px; height: 22px; padding-inline: 4px; border: 1px solid var(--ink); border-radius: 999px; background: var(--marigold); color: var(--ink); font-size: .72rem; font-weight: 800; }
+{% endstylesheet %}
 
 {% schema %}
 {

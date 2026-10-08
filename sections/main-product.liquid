@@ -1,7 +1,7 @@
 <section class="page-width product-page">
   <div class="product-media">
     {% if product.featured_image %}
-      {{ product.featured_image | image_url: width: 1200 | image_tag: alt: product.featured_image.alt | escape }}
+      {{ product.featured_image | image_url: width: 1200 | image_tag: alt: product.featured_image.alt }}
     {% else %}
       <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" width="1200" height="900">
     {% endif %}
@@ -12,18 +12,33 @@
     {% render 'price', product: product %}
     <div class="rte">{{ product.description }}</div>
     {% form 'product', product %}
-      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-      <label for="Quantity-{{ section.id }}">Quantity</label>
+      {{ form.errors | default_errors }}
+      <input type="hidden" name="return_to" value="{{ routes.cart_url }}">
+      {% if product.has_only_default_variant %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {% else %}
+        <label for="Variant-{{ section.id }}">{{ 'products.product.variant' | t }}</label>
+        <select id="Variant-{{ section.id }}" name="id" class="product-form__variant">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>{{ variant.title | escape }} — {{ variant.price | money }}{% unless variant.available %} — {{ 'products.product.sold_out' | t }}{% endunless %}</option>
+          {% endfor %}
+        </select>
+      {% endif %}
+      <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
       <input class="product-form__quantity" id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
       <div class="product-form__buttons">
         <button class="button" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>
-          {% if product.available %}Add to cart{% else %}Sold out{% endif %}
+          {% if product.available %}{{ 'products.product.add_to_cart' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}
         </button>
-        {{ form | payment_button }}
+        {% if product.available %}{{ form | payment_button }}{% endif %}
       </div>
     {% endform %}
   </div>
 </section>
+
+{% stylesheet %}
+  .product-form__variant { display: block; width: 100%; margin: 8px 0 18px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--paper); color: var(--ink); }
+{% endstylesheet %}
 
 {% schema %}
 {

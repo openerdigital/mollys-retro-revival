@@ -1,7 +1,33 @@
 {
   "products": {
     "product": {
-      "sold_out": "Sold out"
+      "sold_out": "Sold out",
+      "quantity": "Quantity",
+      "add_to_cart": "Add to cart",
+      "variant": "Choose an option"
+    }
+  },
+  "cart": {
+    "general": {
+      "eyebrow": "Your vintage finds",
+      "title": "Your cart",
+      "continue_shopping": "Continue shopping",
+      "empty": "Your cart is waiting for a good find",
+      "empty_hint": "Browse the collection and add something with a little personality.",
+      "browse": "Browse the collection",
+      "items_count": { "one": "{{ count }} item", "other": "{{ count }} items" },
+      "remove_item": "Remove {{ title }}",
+      "remove": "Remove",
+      "quantity": "Quantity",
+      "quantity_for": "Quantity for {{ title }}",
+      "update": "Update cart",
+      "summary": "Order summary",
+      "subtotal": "Subtotal",
+      "checkout_hint": "Shipping, taxes and any further discounts are calculated at checkout.",
+      "note": "Order note (optional)",
+      "checkout": "Checkout",
+      "secure": "Secure checkout powered by Shopify",
+      "label": "Cart, {{ count }} items"
     }
   }
 }
