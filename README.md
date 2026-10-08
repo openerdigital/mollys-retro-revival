@@ -29,3 +29,20 @@ shopify theme dev --store pzz1vh-21.myshopify.com
 ```
 
 The `main` branch is the production source branch. Develop changes on feature branches, preview them locally, and merge reviewed work into `main`.
+
+## Staging
+
+The merchant store has an unpublished theme named **Molly's Retro Revival - Staging**, ID `167542653125`.
+
+- [Staging preview](https://pzz1vh-21.myshopify.com/?preview_theme_id=167542653125)
+- [Theme editor](https://pzz1vh-21.myshopify.com/admin/themes/167542653125/editor)
+
+The storefront is password protected. Visitors need the store's storefront password to view the preview.
+
+To upload changes to the existing staging theme:
+
+```bash
+shopify theme push --store pzz1vh-21.myshopify.com --theme 167542653125 --strict
+```
+
+GitHub stores the source code. Deployments currently use Shopify CLI; pushing to GitHub alone does not update the staging theme. Shopify hosts the storefront and checkout, so this Liquid theme does not require a Vercel deployment.
