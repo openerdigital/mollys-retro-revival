@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "hero": {
+      "type": "retro-hero",
+      "settings": {
+        "button_link": "/collections/shop-all-vintage"
+      }
+    },
+    "categories": {
+      "type": "category-ctas",
+      "blocks": {
+        "furniture": {
+          "type": "category",
+          "settings": {
+            "title": "Furniture",
+            "link": "/collections/furniture"
+          }
+        },
+        "glassware": {
+          "type": "category",
+          "settings": {
+            "title": "Glassware",
+            "link": "/collections/glassware"
+          }
+        },
+        "decor": {
+          "type": "category",
+          "settings": {
+            "title": "Decor",
+            "link": "/collections/decor"
+          }
+        },
+        "all": {
+          "type": "category",
+          "settings": {
+            "title": "Shop all",
+            "link": "/collections/all"
+          }
+        }
+      },
+      "block_order": ["furniture", "glassware", "decor", "all"]
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Our collection",
+        "collection": "shop-all-vintage"
+      }
+    },
+    "about": {
+      "type": "about-feature",
+      "settings": {
+        "link": "/pages/about-us"
+      }
+    }
+  },
+  "order": ["hero", "categories", "featured", "about"]
+}

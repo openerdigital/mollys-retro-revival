@@ -1,0 +1,33 @@
+<section class="page-width product-page">
+  <div class="product-media">
+    {% if product.featured_image %}
+      {{ product.featured_image | image_url: width: 1200 | image_tag: alt: product.featured_image.alt | escape }}
+    {% else %}
+      <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="">
+    {% endif %}
+  </div>
+  <div class="product-info">
+    <p>{{ product.vendor }}</p>
+    <h1 class="product-title">{{ product.title }}</h1>
+    {% render 'price', product: product %}
+    <div class="rte">{{ product.description }}</div>
+    {% form 'product', product %}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <label for="Quantity-{{ section.id }}">Quantity</label>
+      <input class="product-form__quantity" id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
+      <div class="product-form__buttons">
+        <button class="button" type="submit" name="add" {% unless product.available %}disabled{% endunless %}>
+          {% if product.available %}Add to cart{% else %}Sold out{% endif %}
+        </button>
+        {{ form | payment_button }}
+      </div>
+    {% endform %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main product",
+  "settings": []
+}
+{% endschema %}

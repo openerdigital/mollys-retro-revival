@@ -1,0 +1,67 @@
+<section class="section about-page">
+  <div class="page-width">
+    <div class="about-page__hero">
+      <div>
+        <p class="page-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h1>{{ page.title | default: section.settings.heading }}</h1>
+        <p>{{ section.settings.intro }}</p>
+      </div>
+      <div class="about-page__mark" aria-hidden="true">
+        <img src="{{ 'mollys-retro-logo-transparent.png' | asset_url }}" alt="" width="1034" height="1289" loading="lazy">
+      </div>
+    </div>
+
+    <div class="about-page__story">
+      <div class="about-page__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', alt: section.settings.heading | escape }}
+        {% else %}
+          <img src="{{ 'molly-portrait.jpg' | asset_url }}" alt="Molly, founder of Molly's Retro Revival" width="1440" height="1920" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="about-page__content">
+        <h2>{{ section.settings.story_heading }}</h2>
+        {% if page.content != blank %}
+          <div class="rte">{{ page.content }}</div>
+        {% else %}
+          <p>{{ section.settings.story_text }}</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="about-values">
+      <article>
+        <h3>Pre-loved first</h3>
+        <p>We look for pieces with personality, good bones, and another chapter ahead of them.</p>
+      </article>
+      <article>
+        <h3>Curated, not cluttered</h3>
+        <p>Every find is chosen for shape, colour, texture, and the way it can lift a real home.</p>
+      </article>
+      <article>
+        <h3>Retro warmth</h3>
+        <p>Think timber, amber glass, ceramics, playful flowers, and generous vintage charm.</p>
+      </article>
+    </div>
+
+    <div class="about-page__cta">
+      <h2>{{ section.settings.cta_heading }}</h2>
+      <a class="button" href="{{ routes.collections_url }}/shop-all-vintage">Shop all finds</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About page",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About Molly's Retro Revival" },
+    { "type": "text", "id": "heading", "label": "Fallback heading", "default": "About us" },
+    { "type": "textarea", "id": "intro", "label": "Intro", "default": "Vintage, pre-loved, curated gifts and retro treasures for homes with a little more soul." },
+    { "type": "image_picker", "id": "image", "label": "Story image" },
+    { "type": "text", "id": "story_heading", "label": "Story heading", "default": "Collected with care" },
+    { "type": "textarea", "id": "story_text", "label": "Fallback story text", "default": "Molly's Retro Revival is built around warm, character-filled pieces with a second life ahead of them. We source furniture, glassware, decor and small gifts for homes that feel personal, playful and a little nostalgic." },
+    { "type": "text", "id": "cta_heading", "label": "CTA heading", "default": "Ready to find something with a story?" }
+  ]
+}
+{% endschema %}

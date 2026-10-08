@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Retro vintage placeholder</title>
+  <desc id="desc">Neutral vintage room illustration with timber, linen, brass, and ceramic details.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e7ded0"/>
+      <stop offset="1" stop-color="#cfc2ae"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" x2="1">
+      <stop offset="0" stop-color="#b77a45"/>
+      <stop offset="1" stop-color="#7b4a28"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#3a2417" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="640" fill="url(#wall)"/>
+  <rect y="640" width="1200" height="260" fill="url(#floor)"/>
+  <circle cx="1030" cy="150" r="96" fill="#d0a35f" opacity=".55"/>
+  <rect x="88" y="92" width="235" height="185" rx="18" fill="#f2eadf" opacity=".92"/>
+  <rect x="116" y="122" width="179" height="124" rx="8" fill="#9b6a3f"/>
+  <circle cx="205" cy="184" r="48" fill="#6d4a33"/>
+  <g filter="url(#shadow)">
+    <path d="M260 566c0-115 94-208 210-208h58c116 0 210 93 210 208v74H260v-74Z" fill="#c49a74"/>
+    <path d="M342 584c0-72 58-130 130-130h56c72 0 130 58 130 130v56H342v-56Z" fill="#8b5e3c"/>
+    <rect x="224" y="600" width="552" height="96" rx="48" fill="#4a2f1f"/>
+    <rect x="300" y="684" width="48" height="118" rx="24" fill="#4a2f1f"/>
+    <rect x="652" y="684" width="48" height="118" rx="24" fill="#4a2f1f"/>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="830" y="377" width="42" height="298" rx="21" fill="#4a2f1f"/>
+    <path d="M753 390h196l-44-150H797l-44 150Z" fill="#d7b982"/>
+    <path d="M787 250h128l-18-56h-92l-18 56Z" fill="#f2eadf"/>
+  </g>
+  <g filter="url(#shadow)">
+    <ellipse cx="990" cy="705" rx="112" ry="28" fill="#4a2f1f"/>
+    <path d="M944 394c62 0 112 50 112 112v180H832V506c0-62 50-112 112-112Z" fill="#e8dfd2"/>
+    <path d="M903 452c28 0 51 23 51 51v118H852V503c0-28 23-51 51-51Z" fill="#9b6a3f"/>
+    <circle cx="944" cy="372" r="58" fill="#c7a56e"/>
+  </g>
+</svg>

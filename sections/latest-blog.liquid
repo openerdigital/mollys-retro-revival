@@ -1,0 +1,39 @@
+<section class="section blog-feature-section">
+  <div class="page-width">
+    <div class="blog-feature">
+      <div class="blog-feature__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.title | escape }}
+        {% else %}
+          <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="blog-feature__content">
+        <p class="blog-feature__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.excerpt }}</p>
+        <div class="blog-feature__actions">
+          <a class="button" href="{{ section.settings.article_link }}">{{ section.settings.article_button_label }}</a>
+          <a class="button button--secondary" href="{{ section.settings.blog_link }}">{{ section.settings.blog_button_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Latest blog",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Latest from the journal" },
+    { "type": "text", "id": "title", "label": "Title", "default": "How to style one great vintage piece in a modern room" },
+    { "type": "textarea", "id": "excerpt", "label": "Excerpt", "default": "Start with one warm anchor piece, repeat its colour once or twice, then let texture do the heavy lifting. Here is how we style retro finds without making a room feel like a time capsule." },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "article_button_label", "label": "Article button label", "default": "Read the latest" },
+    { "type": "url", "id": "article_link", "label": "Article link" },
+    { "type": "text", "id": "blog_button_label", "label": "Blog button label", "default": "View all blogs" },
+    { "type": "url", "id": "blog_link", "label": "Blog link" }
+  ],
+  "presets": [{ "name": "Latest blog" }]
+}
+{% endschema %}

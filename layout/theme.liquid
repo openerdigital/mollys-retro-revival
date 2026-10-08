@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#8f9300">
+    <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" sizes="any">
+    <link rel="icon" type="image/png" href="{{ 'favicon-32.png' | asset_url }}" sizes="32x32">
+    <link rel="apple-touch-icon" href="{{ 'favicon-180.png' | asset_url }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <title>{{ page_title }}{% if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ template.name | handle }}">
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">Skip to content</a>
+    {% section 'announcement-bar' %}
+    {% section 'header' %}
+    <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+    <script>
+      (() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const revealItems = document.querySelectorAll('.template-index .category-card, .template-index .product-card, .template-index .blog-feature, .template-index .about-feature');
+        if (!revealItems.length) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.template-index .category-grid, .template-index .product-grid').forEach((grid) => {
+          grid.querySelectorAll('.category-card, .product-card').forEach((item, index) => {
+            item.style.setProperty('--reveal-delay', `${index * 175}ms`);
+          });
+        });
+
+        revealItems.forEach((item) => {
+          item.classList.add('scroll-reveal');
+          observer.observe(item);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{% doc %}
+@param {product} product - Product whose price should render.
+{% enddoc %}
+
+<div class="price">
+  {% if product.price_varies %}
+    From {{ product.price_min | money }}
+  {% else %}
+    {{ product.price | money }}
+  {% endif %}
+</div>

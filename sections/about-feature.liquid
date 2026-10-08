@@ -1,0 +1,35 @@
+<section class="section about-feature-section">
+  <div class="page-width">
+    <div class="about-feature">
+      <div class="about-feature__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.heading | escape }}
+        {% else %}
+          <img src="{{ 'molly-portrait.jpg' | asset_url }}" alt="Molly, founder of Molly's Retro Revival" width="1440" height="1920" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="about-feature__content">
+        <p class="about-feature__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2>{{ section.settings.heading }}</h2>
+        <span class="about-feature__rule" aria-hidden="true"></span>
+        <p>{{ section.settings.text }}</p>
+        <a class="button" href="{{ section.settings.link }}">{{ section.settings.button_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About feature",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Thoughtfully collected retro treasures" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "Molly's Retro Revival is built around warm, character-filled pieces with a second life ahead of them. We source vintage, pre-loved and decorative finds for homes that feel personal, playful and a little nostalgic." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Read about us" },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "presets": [{ "name": "About feature" }]
+}
+{% endschema %}

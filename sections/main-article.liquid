@@ -1,0 +1,78 @@
+<article class="section article-page">
+  <div class="page-width article-page__inner">
+    <header class="article-header">
+      <p class="page-hero__eyebrow">Blog</p>
+      <h1>{{ article.title | default: 'How to style one great vintage piece in a modern room' }}</h1>
+      <p>
+        {% if article.published_at %}
+          {{ article.published_at | date: '%d %B %Y' }}
+        {% else %}
+          Styling guide
+        {% endif %}
+      </p>
+    </header>
+
+    <div class="article-page__media">
+      {% if article.image %}
+        {{ article.image | image_url: width: 1300 | image_tag: loading: 'eager', alt: article.image.alt | escape }}
+      {% else %}
+        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="">
+      {% endif %}
+    </div>
+
+    <div class="article-content">
+      {% if article.content != blank %}
+        <div class="rte">{{ article.content }}</div>
+      {% else %}
+        <div class="article-content__intro">
+          <p>A good vintage room does not need to look like a museum. The easiest way in is to choose one piece with warmth, then let the rest of the room support it quietly.</p>
+        </div>
+
+        <section class="article-content__section">
+          <h2>Start with one anchor</h2>
+          <p>Pick the piece that carries the most personality: a velvet chair, amber vase, walnut side table, ceramic lamp or framed print. Give it room to breathe and avoid adding too many loud pieces around it straight away.</p>
+          <p>For Molly's Retro Revival, we love pieces that feel useful first and charming second. If it earns its place in the room, the styling becomes much easier.</p>
+        </section>
+
+        <blockquote class="article-pullquote">
+          “Vintage works best when it feels collected, not themed.”
+        </blockquote>
+
+        <section class="article-content__section">
+          <h2>Repeat one colour</h2>
+          <p>Look closely at your anchor piece and choose one colour to repeat somewhere else. It might be rust, olive, amber, cream, walnut or brass. Repeat it once or twice through a cushion, glass object, artwork, book spine or lamp shade.</p>
+          <p>This creates a thread through the room without making everything match too perfectly.</p>
+        </section>
+
+        <section class="article-tips">
+          <h2>Three easy styling moves</h2>
+          <ul>
+            <li><strong>Mix eras:</strong> pair a retro piece with simple modern shapes.</li>
+            <li><strong>Use texture:</strong> timber, linen, glass and pottery soften bold colours.</li>
+            <li><strong>Leave space:</strong> one strong object often looks better than five competing ones.</li>
+          </ul>
+        </section>
+
+        <section class="article-content__section">
+          <h2>Finish with something useful</h2>
+          <p>The best vintage pieces are not just decorative. A tray can hold keys, a vase can carry flowers, a side table can hold the book you are actually reading. When the object has a job, it becomes part of the home instead of sitting on display.</p>
+        </section>
+      {% endif %}
+    </div>
+
+    <div class="article-page__cta">
+      <h2>Find your anchor piece</h2>
+      <div>
+        <a class="button" href="/collections/shop-all-vintage">Shop all finds</a>
+        <a class="button button--secondary" href="{{ blog.url | default: '/blogs/news' }}">Back to journal</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Main article",
+  "settings": []
+}
+{% endschema %}

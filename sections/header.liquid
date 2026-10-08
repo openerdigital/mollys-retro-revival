@@ -1,0 +1,48 @@
+<header class="site-header">
+  <div class="page-width header-inner">
+    <a class="brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+      <img src="{{ 'mollys-retro-logo-transparent.png' | asset_url }}" alt="{{ shop.name | escape }}" width="1034" height="1289">
+    </a>
+    <nav class="desktop-nav" aria-label="Main menu">
+      <ul class="nav-list">
+        <li><a href="{{ routes.collections_url }}/shop-all-vintage">Shop all</a></li>
+        <li><a href="{{ routes.collections_url }}/furniture">Furniture</a></li>
+        <li><a href="{{ routes.collections_url }}/glassware">Glassware</a></li>
+        <li><a href="{{ routes.collections_url }}/decor">Decor</a></li>
+        <li><a href="/pages/about-us">About</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="button button--nav" href="{{ routes.collections_url }}/shop-all-vintage">Shop all</a>
+      <a class="header-icon" href="{{ routes.search_url }}" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a class="header-icon" href="{{ routes.cart_url }}" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h14l-2 10H8L6 7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M6 7 5 3H2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></svg>
+      </a>
+    </div>
+    <details class="mobile-menu">
+      <summary aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <nav aria-label="Mobile menu">
+        <ul class="mobile-nav-list">
+          <li><a href="{{ routes.collections_url }}/shop-all-vintage">Shop all</a></li>
+          <li><a href="{{ routes.collections_url }}/furniture">Furniture</a></li>
+          <li><a href="{{ routes.collections_url }}/glassware">Glassware</a></li>
+          <li><a href="{{ routes.collections_url }}/decor">Decor</a></li>
+          <li><a href="/pages/about-us">About</a></li>
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}

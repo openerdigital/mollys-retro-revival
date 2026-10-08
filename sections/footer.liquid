@@ -1,0 +1,15 @@
+<footer class="footer">
+  <div class="page-width footer-inner">
+    <strong>{{ shop.name }}</strong>
+    <span>{{ section.settings.text }}</span>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Vintage, secondhand, one of one." }
+  ]
+}
+{% endschema %}

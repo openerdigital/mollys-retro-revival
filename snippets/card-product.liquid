@@ -1,0 +1,22 @@
+{% doc %}
+@param {product} product - Product card to render.
+{% enddoc %}
+
+<article class="product-card">
+  <a href="{{ product.url }}">
+    <div class="product-card__media">
+      {% if product.featured_image %}
+        {{ product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: product.featured_image.alt | escape }}
+      {% else %}
+        <img class="image-placeholder" src="{{ 'retro-placeholder.svg' | asset_url }}" alt="" loading="lazy">
+      {% endif %}
+      {% unless product.available %}
+        <span class="product-card__badge">{{ 'products.product.sold_out' | t }}</span>
+      {% endunless %}
+    </div>
+    <div class="product-card__info">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      {% render 'price', product: product %}
+    </div>
+  </a>
+</article>
