@@ -11,6 +11,7 @@
   --line: rgba(48, 24, 13, .18);
   --shadow: 0 8px 24px rgba(48, 24, 13, .06);
   --radius: 10px;
+  --font-retro: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
 }
 
 * { box-sizing: border-box; }
@@ -58,9 +59,11 @@ button, input, select, textarea { font: inherit; }
   border-radius: 999px;
   background: var(--marigold);
   color: var(--ink);
-  font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: var(--font-retro);
+  font-size: .9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .025em;
   box-shadow: 2px 2px 0 rgba(159, 37, 5, .55);
   cursor: pointer;
   transition: background-color .16s ease, border-color .16s ease, color .16s ease, transform .16s ease;
@@ -121,7 +124,7 @@ button.shopify-payment-button__button:hover {
 .nav-list {
   justify-content: center;
   flex-wrap: wrap;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-retro);
   font-weight: 900;
   text-transform: uppercase;
   color: var(--cream);
@@ -460,6 +463,15 @@ button.shopify-payment-button__button:hover {
   text-transform: none;
   letter-spacing: .05em;
   font-size: .82rem;
+}
+.page-hero__eyebrow,
+.about-feature__eyebrow,
+.cart-page__eyebrow,
+.product-card__badge {
+  font-family: var(--font-retro);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
 }
 .page-hero h1,
 .article-header h1,
@@ -966,7 +978,7 @@ button.shopify-payment-button__button:hover {
     padding: 12px 14px;
     border-radius: 6px;
     color: var(--ink);
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-family: var(--font-retro);
     font-weight: 900;
     text-transform: uppercase;
   }
